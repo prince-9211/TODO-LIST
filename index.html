@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .input-row input,
+    .input-row select,
+    .input-row button {
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    .task-section {
+      margin-bottom: 30px;
+    }
+
+    .task {
+      background: #fff;
+      padding: 10px;
+      margin: 5px 0;
+      border-left: 5px solid #007bff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .task.completed {
+      border-color: green;
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+
+    .task button {
+      margin-left: 10px;
+    }
+
+    .task strong {
+      display: inline-block;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>To-Do List</h1>
+
+  <div class="input-row">
+    <input type="text" id="itemname" placeholder="Item Name" />
+    <input type="date" id="deadline" />
+    <select id="priority">
+      <option value="">Priority</option>
+      <option value="high">High</option>
+      <option value="medium">Medium</option>
+      <option value="low">Low</option>
+    </select>
+    <button id="additem">Add Item</button>
+  </div>
+
+  <div class="task-section">
+    <h2>Today's Tasks - <span id="todayDate"></span></h2>
+    <div id="todayTasks"></div>
+  </div>
+
+  <div class="task-section">
+    <h2>Future Tasks</h2>
+    <div id="futureTasks"></div>
+  </div>
+
+  <div class="task-section">
+    <h2>Completed Tasks</h2>
+    <div id="completedTasks"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
